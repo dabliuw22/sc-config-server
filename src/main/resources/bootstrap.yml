@@ -1,0 +1,44 @@
+server:
+  port: ${PORT:8888}
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        monitor:
+          gitlab:
+            enabled: false
+          github:
+            enabled: true
+          bitbucket:
+            enabled: false
+          gitee:
+            enabled: false
+        git:
+          uri: https://github.com/dabliuw22/sc-config-repo.git
+          username: ${username}
+          password: ${password}
+          clone-on-start: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+eureka:
+  client:
+    service-url:
+      default-zone: ${EUREKA_URI:http://localhost:8761/eureka}
+
+# All actuator endpoints can be accessed without requiring authentication Spring boot 2.x
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+#Disable security feature for all end points.By default all sensitive HTTP endpoints are secure Spring boot 1.x
+#management:
+#  security:
+#    enabled: false
