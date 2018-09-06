@@ -1,3 +1,4 @@
+
 package com.leysoft;
 
 import org.springframework.boot.SpringApplication;
@@ -10,7 +11,7 @@ import org.springframework.cloud.config.server.EnableConfigServer;
 @SpringBootApplication
 public class ScConfigServerApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ScConfigServerApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(ScConfigServerApplication.class, args);
+    }
 }
