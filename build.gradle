@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		springBootVersion = '2.0.3.RELEASE'
+		springBootVersion = '2.1.4.RELEASE'
 	}
 	repositories {
 		mavenCentral()
@@ -24,18 +24,15 @@ repositories {
 	maven { url "https://repo.spring.io/milestone" }
 }
 
-
-ext {
-	springCloudVersion = 'Finchley.RC2'
-}
+ext['springCloudVersion'] = 'Greenwich.RELEASE'
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-actuator')
-	compile('org.springframework.cloud:spring-cloud-starter-bus-amqp')
-	compile('org.springframework.cloud:spring-cloud-config-server')
-	compile('org.springframework.cloud:spring-cloud-config-monitor')
-	compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.cloud:spring-cloud-starter-bus-amqp'
+	implementation 'org.springframework.cloud:spring-cloud-config-server'
+	implementation 'org.springframework.cloud:spring-cloud-config-monitor'
+	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 dependencyManagement {

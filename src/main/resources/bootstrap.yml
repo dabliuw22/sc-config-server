@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: config-server
+  main:
+    allow-bean-definition-overriding: true
   cloud:
     config:
       server:
@@ -19,8 +21,8 @@ spring:
         git:
           #uri: file:/home/will/Documentos/sc-config-repo
           uri: https://github.com/dabliuw22/sc-config-repo.git
-          username: ${username}
-          password: ${password}
+          username:
+          password:
           clone-on-start: true
   rabbitmq:
     host: localhost
